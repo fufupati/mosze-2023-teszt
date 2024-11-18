@@ -4,31 +4,23 @@ constexpr int N_ELEMENTS = 100;
 
 int main()
 {
-    // NELEMENTS -> N_ELEMENTS
-    int *b = new int[NELEMENTS];
-    // pontosvessző hiányzik
-    std::cout << '1-100 ertekek duplazasa'
-    // i-nek 1-től kell kezdődnie és hiányzik az i<=N_ELEMENTS; i++
-    for (int i = 0;)
+    int *b = new int[N_ELEMENTS];
+    std::cout << "1-100 ertekek duplazasa" << std::endl;
+    for (int i = 1; i<=N_ELEMENTS; i++)
     {
-        // b[i] -> b[i-1]
-        b[i] = i * 2;
+        b[i-1] = i * 2;
     }
-    // hiányzó vég kondíció -> i < N_ELEMENTS
-    for (int i = 0; i; i++)
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        // hiányzó érték, pontosvessző
-        std::cout << "Ertek:"
+        std::cout << "Ertek: " << b[i] << std::endl;
     }    
     std::cout << "Atlag szamitasa: " << std::endl;
-    // hiányzó értékadás -> int atlag = 0;
-    int atlag;
-    // vessző helyett pontosvessző kell
-    for (int i = 0; i < N_ELEMENTS, i++)
+    int atlag = 0;
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        // hiányzó pontosvessző
-        atlag += b[i]
+        atlag += b[i];
     }
+    std::cout << atlag << std::endl;
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
     return 0;
